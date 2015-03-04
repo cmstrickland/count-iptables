@@ -8,10 +8,10 @@ The provision script adds an virtual ip on eth0:0 bound to 192.168.1.6, and sets
 
 you can throw some traffic at the interface by telnetting to it. Something like this will do it.
 
-open a new shell and run `nc -l 192.168.1.6 -p 12345`
+open a new shell and run `nc -l 192.168.1.6 -p 12345` to listen on that interface
 
 from another shell `telnet 192.168.1.6 12345`
 
-type some jank into the first shell
+type some jank into the second shell, you should see it coming in on the first one 
 
-from a third shell `iptables -L -v` should show a packet count on the user chaing
+from a third shell `iptables -L -v` should show a packet count on the user chain
