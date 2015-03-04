@@ -13,6 +13,10 @@
       sudo: yes
       command: iptables -F OUTPUT
 
+    - name: flush zero-zero-count
+      sudo: yes
+      command: iptables -F zero-zero-count
+
     - name: kill zero-zero-count
       sudo: yes
       command: iptables -X zero-zero-count
