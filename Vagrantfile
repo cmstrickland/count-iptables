@@ -34,7 +34,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.hostname = "iptables-vm"
 
   # ip address is convigurable via environment variable
-  ipaddr = ENV['WVM_IP'] || "192.168.100.105"
+  ipaddr = ENV['IPTABLES_VM_IP'] || "192.168.100.105"
   config.vm.network "private_network", ip: ipaddr
 
   # use ansible provisioning to apply configuration to base box
