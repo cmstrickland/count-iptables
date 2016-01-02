@@ -6,12 +6,12 @@ The provision script adds an virtual ip on eth0:0 bound to 192.168.1.6, and sets
 
 `vagrant up && vagrant ssh` to shell in
 
-you can throw some traffic at the interface by telnetting to it. Something like this will do it.
+You can throw some traffic at the interface by telnetting to it. Something like this will do it.
 
-open a new shell and run `nc -l 192.168.1.6 -p 12345` to listen on that interface
+Open a new shell and run `nc -l 192.168.1.6 -p 12345` to listen on that interface
 
-from another shell `telnet 192.168.1.6 12345`
+From another shell `telnet 192.168.1.6 12345`
 
-type some jank into the second shell, you should see it coming in on the first one 
+Type some jank into the second shell, you should see it coming in on the first one 
 
-from a third shell `iptables -L -v` should show a packet count on the user chain
+From a third shell `iptables -L -v` should show a packet count on the user chain
