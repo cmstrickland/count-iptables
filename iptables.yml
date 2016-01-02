@@ -5,23 +5,23 @@
       sudo: yes
       command: ifconfig eth0:0 192.168.1.6 up
 
-    - name: flush input
+    - name: flush input table
       sudo: yes
       command: iptables -F INPUT
 
-    - name: flush output
+    - name: flush output table
       sudo: yes
       command: iptables -F OUTPUT
 
-    - name: flush zero-zero-count
+    - name: flush zero-zero-count table
       sudo: yes
       command: iptables -F zero-zero-count
 
-    - name: kill zero-zero-count
+    - name: kill zero-zero-count table
       sudo: yes
       command: iptables -X zero-zero-count
 
-    - name: create user iptable for it
+    - name: create user iptable for zero-zero-count
       sudo: yes
       command: iptables -N zero-zero-count
 
